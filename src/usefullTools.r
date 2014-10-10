@@ -30,7 +30,8 @@ Load_Obs <- function(file)
   return(matrix(t(obs),ncol=dim(obs)[2],byrow=T))
 }
 
-#load all file => usefull for test
+#load all file => usefull for test premet de charger tous les fichiers
+#pour différencier les trains et les tests, il faut regarder le nom du fichier
 loadAll <- function(rootName){
   cl <- NULL
   allobs <- NULL
