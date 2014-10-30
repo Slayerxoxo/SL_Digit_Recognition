@@ -1,0 +1,455 @@
+initHMMDigit <- function(nbrEtats, nbrObsv)
+{
+  etats <- c()
+  obsv <- c()
+  probInit <- c()
+  probTrans <- c()
+  probEm <- c()
+  
+  # Création de la liste d'états
+  for (i in 1:nbrEtats){
+    etats <- c(etats, as.character(i))
+  }
+  
+  # Création de la liste d'observation
+  for (i in 1:nbrObsv){
+    obsv <- c(obsv, as.character(i))
+  }
+  
+  # Mise en place des proba initiales
+  for (i in 1:nbrEtats){
+   if (i == 1){
+     probInit <- c(probInit, 1)
+   }
+   else{
+     probInit <- c(probInit, 0)
+   }
+  }
+    
+  # Mise en place des proba de transition ppour le HMM optimal
+  for (i in 1:nbrEtats){
+    for (j in 1:nbrEtats){
+      if (i == j){
+        probTrans <- c(probTrans, 0.9)
+      }
+      else if (j == i+1){
+        probTrans <- c(probTrans, 0.1)
+      }
+      else{
+        probTrans <- c(probTrans, 0)
+      }
+    }
+  }
+  matriceInit <- matrix(probTrans, nrow = nbrEtats, ncol = nbrEtats, byrow = T)
+  #print(matriceInit)
+  
+  # Mise en place des proba d'emission
+  for (i in 1:nbrEtats*nbrObsv){
+    probEm <- c(probEm, 1/nbrObsv)
+  }
+  matriceEmission <- matrix(probEm,nrow = nbrEtats, ncol = nbrObsv, byrow = T)
+  
+  # Appel de initHMM
+  resultat <- initHMM(etats, obsv, probInit, matriceInit, matriceEmission)
+  return (resultat)
+}
+
+#########################################################
+# MAIN #
+
+# Initialisation des HMM pour chaque chiffre
+
+### Pour 5x3
+HMM0_5x3 = initHMMDigit(30,15)
+HMM1_5x3 = initHMMDigit(30,15)
+HMM2_5x3 = initHMMDigit(30,15)
+HMM3_5x3 = initHMMDigit(30,15)
+HMM4_5x3 = initHMMDigit(30,15)
+HMM5_5x3 = initHMMDigit(30,15)
+HMM6_5x3 = initHMMDigit(30,15)
+HMM7_5x3 = initHMMDigit(30,15)
+HMM8_5x3 = initHMMDigit(30,15)
+HMM9_5x3 = initHMMDigit(30,15)
+
+# ### Pour 5x4
+# HMM0_5x4 = initHMMDigit(30,20)
+# HMM1_5x4 = initHMMDigit(30,20)
+# HMM2_5x4 = initHMMDigit(30,20)
+# HMM3_5x4 = initHMMDigit(30,20)
+# HMM4_5x4 = initHMMDigit(30,20)
+# HMM5_5x4 = initHMMDigit(30,20)
+# HMM6_5x4 = initHMMDigit(30,20)
+# HMM7_5x4 = initHMMDigit(30,20)
+# HMM8_5x4 = initHMMDigit(30,20)
+# HMM9_5x4 = initHMMDigit(30,20)
+# 
+# ### Pour 8
+# HMM0_8 = initHMMDigit(30,8)
+# HMM1_8 = initHMMDigit(30,8)
+# HMM2_8 = initHMMDigit(30,8)
+# HMM3_8 = initHMMDigit(30,8)
+# HMM4_8 = initHMMDigit(30,8)
+# HMM5_8 = initHMMDigit(30,8)
+# HMM6_8 = initHMMDigit(30,8)
+# HMM7_8 = initHMMDigit(30,8)
+# HMM8_8 = initHMMDigit(30,8)
+# HMM9_8 = initHMMDigit(30,8)
+# 
+# ### Pour 16
+# HMM0_16 = initHMMDigit(30,16)
+# HMM1_16 = initHMMDigit(30,16)
+# HMM2_16 = initHMMDigit(30,16)
+# HMM3_16 = initHMMDigit(30,16)
+# HMM4_16 = initHMMDigit(30,16)
+# HMM5_16 = initHMMDigit(30,16)
+# HMM6_16 = initHMMDigit(30,16)
+# HMM7_16 = initHMMDigit(30,16)
+# HMM8_16 = initHMMDigit(30,16)
+# HMM9_16 = initHMMDigit(30,16)
+
+
+# Chargement des fichiers train
+
+### Pour 5x3
+obs0_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit0.txt')
+obs1_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit1.txt')
+obs2_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit2.txt')
+obs3_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit3.txt')
+obs4_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit4.txt')
+obs5_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit5.txt')
+obs6_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit6.txt')
+obs7_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit7.txt')
+obs8_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit8.txt')
+obs9_5X3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit9.txt')
+# 
+# ### Pour 5x4
+# obs0_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit0.txt')
+# obs1_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit1.txt')
+# obs2_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit2.txt')
+# obs3_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit3.txt')
+# obs4_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit4.txt')
+# obs5_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit5.txt')
+# obs6_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit6.txt')
+# obs7_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit7.txt')
+# obs8_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit8.txt')
+# obs9_5X4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit9.txt')
+# 
+# ### Pour 8
+# obs0_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit0.txt')
+# obs1_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit1.txt')
+# obs2_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit2.txt')
+# obs3_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit3.txt')
+# obs4_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit4.txt')
+# obs5_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit5.txt')
+# obs6_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit6.txt')
+# obs7_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit7.txt')
+# obs8_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit8.txt')
+# obs9_8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit9.txt')
+# 
+# ### Pour 16
+# 
+# obs0_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit0.txt')
+# obs1_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit1.txt')
+# obs2_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit2.txt')
+# obs3_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit3.txt')
+# obs4_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit4.txt')
+# obs5_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit5.txt')
+# obs6_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit6.txt')
+# obs7_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit7.txt')
+# obs8_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit8.txt')
+# obs9_16 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit9.txt')
+
+# Baumwelch
+
+### Pour 5x3
+HMM0_5x3_entraine = baumWelch(HMM0_5x3, obs0_5X3, 10)
+print(HMM0_5x3_entraine)
+save(HMM0_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM0_5x3_entraine.rdata')
+
+HMM1_5x3_entraine = baumWelch(HMM1_5x3, obs1_5X3, 10)
+print(HMM1_5x3_entraine)
+save(HMM1_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM1_5x3_entraine.rdata')
+
+HMM2_5x3_entraine = baumWelch(HMM2_5x3, obs2_5X3, 10)
+print(HMM2_5x3_entraine)
+save(HMM2_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM2_5x3_entraine.rdata')
+
+HMM3_5x3_entraine = baumWelch(HMM3_5x3, obs3_5X3, 10)
+print(HMM3_5x3_entraine)
+save(HMM3_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM3_5x3_entraine.rdata')
+
+HMM4_5x3_entraine = baumWelch(HMM4_5x3, obs4_5X3, 10)
+print(HMM4_5x3_entraine)
+save(HMM4_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM4_5x3_entraine.rdata')
+
+HMM5_5x3_entraine = baumWelch(HMM5_5x3, obs5_5X3, 10)
+print(HMM5_5x3_entraine)
+save(HMM5_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM5_5x3_entraine.rdata')
+
+HMM6_5x3_entraine = baumWelch(HMM6_5x3, obs6_5X3, 10)
+print(HMM6_5x3_entraine)
+save(HMM6_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM6_5x3_entraine.rdata')
+
+HMM7_5x3_entraine = baumWelch(HMM7_5x3, obs7_5X3, 10)
+print(HMM7_5x3_entraine)
+save(HMM7_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM7_5x3_entraine.rdata')
+
+HMM8_5x3_entraine = baumWelch(HMM8_5x3, obs8_5X3, 10)
+print(HMM8_5x3_entraine)
+save(HMM8_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM8_5x3_entraine.rdata')
+
+HMM9_5x3_entraine = baumWelch(HMM9_5x3, obs9_5X3, 10)
+print(HMM9_5x3_entraine)
+save(HMM9_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM9_5x3_entraine.rdata')
+
+# ### Pour 5x4
+# HMM0_5x4_entraine = baumWelch(HMM0_5x4, obs0_5X4, 10)
+# print(HMM0_5x4_entraine)
+# save(HMM0_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM0_5x4_entraine.rdata')
+# 
+# HMM1_5x4_entraine = baumWelch(HMM1_5x4, obs1_5X4, 10)
+# print(HMM1_5x4_entraine)
+# save(HMM1_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM1_5x4_entraine.rdata')
+# 
+# HMM2_5x4_entraine = baumWelch(HMM2_5x4, obs2_5X4, 10)
+# print(HMM2_5x4_entraine)
+# save(HMM2_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM2_5x4_entraine.rdata')
+# 
+# HMM3_5x4_entraine = baumWelch(HMM3_5x4, obs3_5X4, 10)
+# print(HMM3_5x4_entraine)
+# save(HMM3_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM3_5x4_entraine.rdata')
+# 
+# HMM4_5x4_entraine = baumWelch(HMM4_5x4, obs4_5X4, 10)
+# print(HMM4_5x4_entraine)
+# save(HMM4_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM4_5x4_entraine.rdata')
+# 
+# HMM5_5x4_entraine = baumWelch(HMM5_5x4, obs5_5X4, 10)
+# print(HMM5_5x4_entraine)
+# save(HMM5_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM5_5x4_entraine.rdata')
+# 
+# HMM6_5x4_entraine = baumWelch(HMM6_5x4, obs6_5X4, 10)
+# print(HMM6_5x4_entraine)
+# save(HMM6_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM6_5x4_entraine.rdata')
+# 
+# HMM7_5x4_entraine = baumWelch(HMM7_5x4, obs7_5X4, 10)
+# print(HMM7_5x4_entraine)
+# save(HMM7_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM7_5x4_entraine.rdata')
+# 
+# HMM8_5x4_entraine = baumWelch(HMM8_5x4, obs8_5X4, 10)
+# print(HMM8_5x4_entraine)
+# save(HMM8_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM8_5x4_entraine.rdata')
+# 
+# HMM9_5x4_entraine = baumWelch(HMM9_5x4, obs9_5X4, 10)
+# print(HMM9_5x4_entraine)
+# save(HMM9_5x4_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM9_5x4_entraine.rdata')
+# 
+# ### Pour 8
+# HMM0_8_entraine = baumWelch(HMM0_8, obs0_8, 10)
+# print(HMM0_8_entraine)
+# save(HMM0_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM0_8_entraine.rdata')
+# 
+# HMM1_8_entraine = baumWelch(HMM1_8, obs1_8, 10)
+# print(HMM1_8_entraine)
+# save(HMM1_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM1_8_entraine.rdata')
+# 
+# HMM2_8_entraine = baumWelch(HMM2_8, obs2_8, 10)
+# print(HMM2_8_entraine)
+# save(HMM2_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM2_8_entraine.rdata')
+# 
+# HMM3_8_entraine = baumWelch(HMM3_8, obs3_8, 10)
+# print(HMM3_8_entraine)
+# save(HMM3_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM3_8_entraine.rdata')
+# 
+# HMM4_8_entraine = baumWelch(HMM4_8, obs4_8, 10)
+# print(HMM4_8_entraine)
+# save(HMM4_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM4_8_entraine.rdata')
+# 
+# HMM5_8_entraine = baumWelch(HMM5_8, obs5_8, 10)
+# print(HMM5_8_entraine)
+# save(HMM5_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM5_8_entraine.rdata')
+# 
+# HMM6_8_entraine = baumWelch(HMM6_8, obs6_8, 10)
+# print(HMM6_8_entraine)
+# save(HMM6_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM6_8_entraine.rdata')
+# 
+# HMM7_8_entraine = baumWelch(HMM7_8, obs7_8, 10)
+# print(HMM7_8_entraine)
+# save(HMM7_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM7_8_entraine.rdata')
+# 
+# HMM8_8_entraine = baumWelch(HMM8_8, obs8_8, 10)
+# print(HMM8_8_entraine)
+# save(HMM8_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM8_8_entraine.rdata')
+# 
+# HMM9_8_entraine = baumWelch(HMM9_8, obs9_8, 10)
+# print(HMM9_8_entraine)
+# save(HMM9_8_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM9_8_entraine.rdata')
+# 
+# ### Pour 16
+# HMM0_16_entraine = baumWelch(HMM0_16, obs0_16, 10)
+# print(HMM0_16_entraine)
+# save(HMM0_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM0_16_entraine.rdata')
+# 
+# HMM1_16_entraine = baumWelch(HMM1_16, obs1_16, 10)
+# print(HMM1_16_entraine)
+# save(HMM1_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM1_16_entraine.rdata')
+# 
+# HMM2_16_entraine = baumWelch(HMM2_16, obs2_16, 10)
+# print(HMM2_16_entraine)
+# save(HMM2_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM2_16_entraine.rdata')
+# 
+# HMM3_16_entraine = baumWelch(HMM3_16, obs3_16, 10)
+# print(HMM3_16_entraine)
+# save(HMM3_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM3_16_entraine.rdata')
+# 
+# HMM4_16_entraine = baumWelch(HMM4_16, obs4_16, 10)
+# print(HMM4_16_entraine)
+# save(HMM4_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM4_16_entraine.rdata')
+# 
+# HMM5_16_entraine = baumWelch(HMM5_16, obs5_16, 10)
+# print(HMM5_16_entraine)
+# save(HMM5_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM5_16_entraine.rdata')
+# 
+# HMM6_16_entraine = baumWelch(HMM6_16, obs6_16, 10)
+# print(HMM6_16_entraine)
+# save(HMM6_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM6_16_entraine.rdata')
+# 
+# HMM7_16_entraine = baumWelch(HMM7_16, obs7_16, 10)
+# print(HMM7_16_entraine)
+# save(HMM7_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM7_16_entraine.rdata')
+# 
+# HMM8_16_entraine = baumWelch(HMM8_16, obs8_16, 10)
+# print(HMM8_16_entraine)
+# save(HMM8_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM8_16_entraine.rdata')
+# 
+# HMM9_16_entraine = baumWelch(HMM9_16, obs9_16, 10)
+# print(HMM9_16_entraine)
+# save(HMM9_16_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM9_16_entraine.rdata')
+
+###TODO a faire 40 fois
+# load('Results/HMM0_5x3_entraine.rdata')
+
+leHMM_5X3 = c()
+leHMM_5X3 = c(leHMM_5X3, load('Results/HMM0_5x3_entraine.rdata'), load('Results/HMM1_5x3_entraine.rdata'),load('Results/HMM2_5x3_entraine.rdata'),load('Results/HMM3_5x3_entraine.rdata'),load('Results/HMM0_5x4_entraine.rdata'),load('Results/HMM0_5x5_entraine.rdata'),load('Results/HMM0_5x6_entraine.rdata'),load('Results/HMM0_5x7_entraine.rdata'),load('Results/HMM8_5x3_entraine.rdata'),load('Results/HMM9_5x3_entraine.rdata'))
+save(HMM_5x3_entraine, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/HMM_5x3_entraine.rdata')
+
+# si ça marche faire pareil pour :
+# leHMM_5X4 = c()
+# leHMM_8 = c()
+# leHMM_16 = c()
+
+classifyDigit <- function(leObs, leHMM, T = 10, N = 1){
+  true = NULL
+  class = NULL
+  
+  for(i in 1:15){
+    true <- c(true, 0)
+    ob <- leObs[i,]
+    print(i)
+    print(ob)
+    l0 <- loglikelihood(leHMM$m0, ob)
+    l1 <- loglikelihood(leHMM$m1, ob)
+    l2 <- loglikelihood(leHMM$m2, ob)
+    l3 <- loglikelihood(leHMM$m3, ob)
+    l4 <- loglikelihood(leHMM$m4, ob)
+    l5 <- loglikelihood(leHMM$m5, ob)
+    l6 <- loglikelihood(leHMM$m6, ob)
+    l7 <- loglikelihood(leHMM$m7, ob)
+    l8 <- loglikelihood(leHMM$m8, ob)
+    l9 <- loglikelihood(leHMM$m9, ob)
+      
+    if(l0>l1&&l0>l2&&l0>l3&&l0>l4&&l0>l5&&l0>l6&&l0>l7&&l0>l8&&l0>l9){
+      class <- c(class,0)
+    }else if(l1>l0&&l1>l2&&l1>l3&&l1>l4&&l1>l5&&l1>l6&&l1>l7&&l1>l8&&l1>l9){
+      class <- c(class,1)
+    }else if(l2>l1&&l2>l0&&l2>l3&&l2>l4&&l2>l5&&l2>l6&&l2>l7&&l2>l8&&l2>l9){
+      class <- c(class,2)
+    }else if(l3>l1&&l3>l2&&l3>l0&&l3>l4&&l3>l5&&l3>l6&&l3>l7&&l3>l8&&l3>l9){
+      class <- c(class,3)
+    }else if(l4>l1&&l4>l2&&l4>l3&&l4>l0&&l4>l5&&l4>l6&&l4>l7&&l4>l8&&l4>l9){
+      class <- c(class,4)
+    }else if(l5>l1&&l5>l2&&l5>l3&&l5>l4&&l5>l0&&l5>l6&&l5>l7&&l5>l8&&l5>l9){
+      class <- c(class,5)
+    }else if(l6>l1&&l6>l2&&l6>l3&&l6>l4&&l6>l5&&l6>l0&&l6>l7&&l6>l8&&l6>l9){
+      class <- c(class,6)
+    }else if(l7>l1&&l7>l2&&l7>l3&&l7>l4&&l7>l5&&l7>l6&&l7>l0&&l7>l8&&l7>l9){
+      class <- c(class,7)
+    }else if(l8>l1&&l8>l2&&l8>l3&&l8>l4&&l8>l5&&l8>l6&&l8>l7&&l8>l0&&l8>l9){
+      class <- c(class,8)
+    } else{
+      class <- c(class,9)
+    }
+      
+    print(class)
+    print(true)
+  }
+
+
+  ref = matrix(true, ncol=1)
+  pred = matrix(class,ncol=1)
+
+  xtab = table(ref,pred)
+
+  return(xtab)
+}
+
+# Chargement des fichiers test
+
+### Pour 5x3
+test0 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit0.txt')
+test1 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit1.txt')
+test2 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit2.txt')
+test3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit3.txt')
+test4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit4.txt')
+test5 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit5.txt')
+test6 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit6.txt')
+test7 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit7.txt')
+test8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit8.txt')
+test9 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit9.txt')
+# 
+# ### Pour 5x4
+# test0 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit0.txt')
+# test1 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit1.txt')
+# test2 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit2.txt')
+# test3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit3.txt')
+# test4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit4.txt')
+# test5 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit5.txt')
+# test6 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit6.txt')
+# test7 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit7.txt')
+# test8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit8.txt')
+# test9 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Data5X4/Test_compute_symbol_5_4Digit9.txt')
+# 
+# ### Pour 8
+# test0 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit0.txt')
+# test1 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit1.txt')
+# test2 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit2.txt')
+# test3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit3.txt')
+# test4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit4.txt')
+# test5 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit5.txt')
+# test6 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit6.txt')
+# test7 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit7.txt')
+# test8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit8.txt')
+# test9 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir8/Test_compute_symbol_dir_8Digit9.txt')
+# 
+# ### Pour 16
+# 
+# test0 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit0.txt')
+# test1 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit1.txt')
+# test2 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit2.txt')
+# test3 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit3.txt')
+# test4 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit4.txt')
+# test5 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit5.txt')
+# test6 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit6.txt')
+# test7 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit7.txt')
+# test8 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit8.txt')
+# test9 = Load_Obs('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit9.txt')
+
+reco_rate0 <- clasifyDigit(test0,leHMM_5X3)
+# reco_rate1 <- clasifyDigit(test1,#liste des hmm entrainé)
+# reco_rate2 <- clasifyDigit(test2,#liste des hmm entrainé)
+# reco_rate3 <- clasifyDigit(test3,#liste des hmm entrainé
+# reco_rate4 <- clasifyDigit(test4,#liste des hmm entrainé)
+# reco_rate5 <- clasifyDigit(test5,#liste des hmm entrainé)
+# reco_rate6 <- clasifyDigit(test6,#liste des hmm entrainé)
+# reco_rate7 <- clasifyDigit(test7,#liste des hmm entrainé)
+# reco_rate8 <- clasifyDigit(test8,#liste des hmm entrainé)
+# reco_rate9 <- clasifyDigit(test9,#liste des hmm entrainé)

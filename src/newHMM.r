@@ -1,4 +1,3 @@
-
 initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL,
                    emissionProbs=NULL)
 {
@@ -16,6 +15,8 @@ initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL,
   return(list(States=States,Symbols=Symbols,startProbs=S,transProbs=T,
               emissionProbs=E))
 }
+
+
 forward = function(hmm, observation)
 {
   hmm$transProbs[is.na(hmm$transProbs)]       = 0
