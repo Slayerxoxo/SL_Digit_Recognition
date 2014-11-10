@@ -72,41 +72,41 @@ print("Initialisation des HMM pour chaque chiffre")
 # HMM8_5x3 = initHMMDigit(3,15)
 # HMM9_5x3 = initHMMDigit(3,15)
 
-## Pour 5x4
-HMM0_5x4 = initHMMDigit(3,20)
-HMM1_5x4 = initHMMDigit(3,20)
-HMM2_5x4 = initHMMDigit(3,20)
-HMM3_5x4 = initHMMDigit(3,20)
-HMM4_5x4 = initHMMDigit(3,20)
-HMM5_5x4 = initHMMDigit(3,20)
-HMM6_5x4 = initHMMDigit(3,20)
-HMM7_5x4 = initHMMDigit(3,20)
-HMM8_5x4 = initHMMDigit(3,20)
-HMM9_5x4 = initHMMDigit(3,20)
-
-### Pour 8
-HMM0_8 = initHMMDigit(3,8)
-HMM1_8 = initHMMDigit(3,8)
-HMM2_8 = initHMMDigit(3,8)
-HMM3_8 = initHMMDigit(3,8)
-HMM4_8 = initHMMDigit(3,8)
-HMM5_8 = initHMMDigit(3,8)
-HMM6_8 = initHMMDigit(3,8)
-HMM7_8 = initHMMDigit(3,8)
-HMM8_8 = initHMMDigit(3,8)
-HMM9_8 = initHMMDigit(3,8)
-
-### Pour 16
-HMM0_16 = initHMMDigit(3,16)
-HMM1_16 = initHMMDigit(3,16)
-HMM2_16 = initHMMDigit(3,16)
-HMM3_16 = initHMMDigit(3,16)
-HMM4_16 = initHMMDigit(3,16)
-HMM5_16 = initHMMDigit(3,16)
-HMM6_16 = initHMMDigit(3,16)
-HMM7_16 = initHMMDigit(3,16)
-HMM8_16 = initHMMDigit(3,16)
-HMM9_16 = initHMMDigit(3,16)
+### Pour 5x4
+# HMM0_5x4 = initHMMDigit(3,20)
+# HMM1_5x4 = initHMMDigit(3,20)
+# HMM2_5x4 = initHMMDigit(3,20)
+# HMM3_5x4 = initHMMDigit(3,20)
+# HMM4_5x4 = initHMMDigit(3,20)
+# HMM5_5x4 = initHMMDigit(3,20)
+# HMM6_5x4 = initHMMDigit(3,20)
+# HMM7_5x4 = initHMMDigit(3,20)
+# HMM8_5x4 = initHMMDigit(3,20)
+# HMM9_5x4 = initHMMDigit(3,20)
+# 
+# ### Pour 8
+# HMM0_8 = initHMMDigit(3,8)
+# HMM1_8 = initHMMDigit(3,8)
+# HMM2_8 = initHMMDigit(3,8)
+# HMM3_8 = initHMMDigit(3,8)
+# HMM4_8 = initHMMDigit(3,8)
+# HMM5_8 = initHMMDigit(3,8)
+# HMM6_8 = initHMMDigit(3,8)
+# HMM7_8 = initHMMDigit(3,8)
+# HMM8_8 = initHMMDigit(3,8)
+# HMM9_8 = initHMMDigit(3,8)
+# 
+# ### Pour 16
+# HMM0_16 = initHMMDigit(3,16)
+# HMM1_16 = initHMMDigit(3,16)
+# HMM2_16 = initHMMDigit(3,16)
+# HMM3_16 = initHMMDigit(3,16)
+# HMM4_16 = initHMMDigit(3,16)
+# HMM5_16 = initHMMDigit(3,16)
+# HMM6_16 = initHMMDigit(3,16)
+# HMM7_16 = initHMMDigit(3,16)
+# HMM8_16 = initHMMDigit(3,16)
+# HMM9_16 = initHMMDigit(3,16)
 
 
 # Chargement des fichiers train
@@ -123,52 +123,52 @@ print("Chargement des fichiers train observations")
 # obs7_5X3 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit7.txt')
 # obs8_5X3 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit8.txt')
 # obs9_5X3 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Train_compute_symbol_5_3Digit9.txt')
-
-### Pour 5x4
-obs0_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit0.txt')
-obs1_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit1.txt')
-obs2_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit2.txt')
-obs3_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit3.txt')
-obs4_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit4.txt')
-obs5_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit5.txt')
-obs6_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit6.txt')
-obs7_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit7.txt')
-obs8_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit8.txt')
-obs9_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit9.txt')
-
-### Pour 8
-obs0_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit0.txt')
-obs1_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit1.txt')
-obs2_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit2.txt')
-obs3_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit3.txt')
-obs4_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit4.txt')
-obs5_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit5.txt')
-obs6_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit6.txt')
-obs7_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit7.txt')
-obs8_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit8.txt')
-obs9_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit9.txt')
-
-### Pour 16
-
-obs0_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit0.txt')
-obs1_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit1.txt')
-obs2_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit2.txt')
-obs3_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit3.txt')
-obs4_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit4.txt')
-obs5_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit5.txt')
-obs6_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit6.txt')
-obs7_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit7.txt')
-obs8_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit8.txt')
-obs9_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit9.txt')
+# 
+# ### Pour 5x4
+# obs0_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit0.txt')
+# obs1_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit1.txt')
+# obs2_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit2.txt')
+# obs3_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit3.txt')
+# obs4_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit4.txt')
+# obs5_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit5.txt')
+# obs6_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit6.txt')
+# obs7_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit7.txt')
+# obs8_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit8.txt')
+# obs9_5X4 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X4/Train_compute_symbol_5_4Digit9.txt')
+# 
+# ### Pour 8
+# obs0_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit0.txt')
+# obs1_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit1.txt')
+# obs2_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit2.txt')
+# obs3_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit3.txt')
+# obs4_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit4.txt')
+# obs5_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit5.txt')
+# obs6_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit6.txt')
+# obs7_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit7.txt')
+# obs8_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit8.txt')
+# obs9_8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir8/Train_compute_symbol_dir_8Digit9.txt')
+# 
+# ### Pour 16
+# 
+# obs0_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit0.txt')
+# obs1_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit1.txt')
+# obs2_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit2.txt')
+# obs3_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit3.txt')
+# obs4_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit4.txt')
+# obs5_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit5.txt')
+# obs6_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit6.txt')
+# obs7_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit7.txt')
+# obs8_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit8.txt')
+# obs9_16 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Train_compute_symbol_dir_16Digit9.txt')
 
 
 # baumWelchList
 print("baumWelchList")
 
 ### Pour 5x3
-HMM0_5x3_entraine = baumWelchList(HMM0_5x3, obs0_5X3, 1000)$hmm
-print(HMM0_5x3_entraine)
-save(HMM0_5x3_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x3_entraine.rdata')
+# HMM0_5x3_entraine = baumWelchList(HMM0_5x3, obs0_5X3, 1000)$hmm
+# print(HMM0_5x3_entraine)
+# save(HMM0_5x3_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x3_entraine.rdata')
 # 
 # HMM1_5x3_entraine = baumWelchList(HMM1_5x3, obs1_5X3, 1000)$hmm
 # print(HMM1_5x3_entraine)
@@ -205,196 +205,193 @@ save(HMM0_5x3_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_
 # HMM9_5x3_entraine = baumWelchList(HMM9_5x3, obs9_5X3, 1000)$hmm
 # print(HMM9_5x3_entraine)
 # save(HMM9_5x3_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x3_entraine.rdata')
+# 
+# ### Pour 5x4
+# print("baumWelchList 5X4 0")
+# HMM0_5x4_entraine = baumWelchList(HMM0_5x4, obs0_5X4, 1000)$hmm
+# print(HMM0_5x4_entraine)
+# save(HMM0_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 1")
+# HMM1_5x4_entraine = baumWelchList(HMM1_5x4, obs1_5X4, 1000)$hmm
+# print(HMM1_5x4_entraine)
+# save(HMM1_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 2")
+# HMM2_5x4_entraine = baumWelchList(HMM2_5x4, obs2_5X4, 1000)$hmm
+# print(HMM2_5x4_entraine)
+# save(HMM2_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 3")
+# HMM3_5x4_entraine = baumWelchList(HMM3_5x4, obs3_5X4, 1000)$hmm
+# print(HMM3_5x4_entraine)
+# save(HMM3_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 4")
+# HMM4_5x4_entraine = baumWelchList(HMM4_5x4, obs4_5X4, 1000)$hmm
+# print(HMM4_5x4_entraine)
+# save(HMM4_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 5")
+# HMM5_5x4_entraine = baumWelchList(HMM5_5x4, obs5_5X4, 1000)$hmm
+# print(HMM5_5x4_entraine)
+# save(HMM5_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 6")
+# HMM6_5x4_entraine = baumWelchList(HMM6_5x4, obs6_5X4, 1000)$hmm
+# print(HMM6_5x4_entraine)
+# save(HMM6_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 7")
+# HMM7_5x4_entraine = baumWelchList(HMM7_5x4, obs7_5X4, 1000)$hmm
+# print(HMM7_5x4_entraine)
+# save(HMM7_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 8")
+# HMM8_5x4_entraine = baumWelchList(HMM8_5x4, obs8_5X4, 1000)$hmm
+# print(HMM8_5x4_entraine)
+# save(HMM8_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x4_entraine.rdata')
+# 
+# print("baumWelchList 5X4 9")
+# HMM9_5x4_entraine = baumWelchList(HMM9_5x4, obs9_5X4, 1000)$hmm
+# print(HMM9_5x4_entraine)
+# save(HMM9_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x4_entraine.rdata')
+# 
+# ### Pour 8
+# 
+# print("baumWelchList 8 0")
+# HMM0_8_entraine = baumWelchList(HMM0_8, obs0_8, 1000)$hmm
+# print(HMM0_8_entraine)
+# save(HMM0_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_8_entraine.rdata')
+# 
+# print("baumWelchList 8 1")
+# HMM1_8_entraine = baumWelchList(HMM1_8, obs1_8, 1000)$hmm
+# print(HMM1_8_entraine)
+# save(HMM1_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_8_entraine.rdata')
+# 
+# print("baumWelchList 8 2")
+# HMM2_8_entraine = baumWelchList(HMM2_8, obs2_8, 1000)$hmm
+# print(HMM2_8_entraine)
+# save(HMM2_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_8_entraine.rdata')
+# 
+# print("baumWelchList 8 3")
+# HMM3_8_entraine = baumWelchList(HMM3_8, obs3_8, 1000)$hmm
+# print(HMM3_8_entraine)
+# save(HMM3_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_8_entraine.rdata')
+# 
+# print("baumWelchList 8 4")
+# HMM4_8_entraine = baumWelchList(HMM4_8, obs4_8, 1000)$hmm
+# print(HMM4_8_entraine)
+# save(HMM4_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_8_entraine.rdata')
+# 
+# print("baumWelchList 8 5")
+# HMM5_8_entraine = baumWelchList(HMM5_8, obs5_8, 1000)$hmm
+# print(HMM5_8_entraine)
+# save(HMM5_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_8_entraine.rdata')
+# 
+# print("baumWelchList 8 6")
+# HMM6_8_entraine = baumWelchList(HMM6_8, obs6_8, 1000)$hmm
+# print(HMM6_8_entraine)
+# save(HMM6_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_8_entraine.rdata')
+# 
+# print("baumWelchList 8 7")
+# HMM7_8_entraine = baumWelchList(HMM7_8, obs7_8, 1000)$hmm
+# print(HMM7_8_entraine)
+# save(HMM7_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_8_entraine.rdata')
+# 
+# print("baumWelchList 8 8")
+# HMM8_8_entraine = baumWelchList(HMM8_8, obs8_8, 1000)$hmm
+# print(HMM8_8_entraine)
+# save(HMM8_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_8_entraine.rdata')
+# 
+# print("baumWelchList 8 9")
+# HMM9_8_entraine = baumWelchList(HMM9_8, obs9_8, 1000)$hmm
+# print(HMM9_8_entraine)
+# save(HMM9_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_8_entraine.rdata')
+# 
+# ### Pour 16
+# 
+# print("baumWelchList 16 0")
+# HMM0_16_entraine = baumWelchList(HMM0_16, obs0_16, 1000)$hmm
+# print(HMM0_16_entraine)
+# save(HMM0_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_16_entraine.rdata')
+# 
+# print("baumWelchList 16 1")
+# HMM1_16_entraine = baumWelchList(HMM1_16, obs1_16, 1000)$hmm
+# print(HMM1_16_entraine)
+# save(HMM1_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_16_entraine.rdata')
+# 
+# print("baumWelchList 16 2")
+# HMM2_16_entraine = baumWelchList(HMM2_16, obs2_16, 1000)$hmm
+# print(HMM2_16_entraine)
+# save(HMM2_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_16_entraine.rdata')
+# 
+# print("baumWelchList 16 3")
+# HMM3_16_entraine = baumWelchList(HMM3_16, obs3_16, 1000)$hmm
+# print(HMM3_16_entraine)
+# save(HMM3_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_16_entraine.rdata')
+# 
+# print("baumWelchList 16 4")
+# HMM4_16_entraine = baumWelchList(HMM4_16, obs4_16, 1000)$hmm
+# print(HMM4_16_entraine)
+# save(HMM4_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_16_entraine.rdata')
+# 
+# print("baumWelchList 16 5")
+# HMM5_16_entraine = baumWelchList(HMM5_16, obs5_16, 1000)$hmm
+# print(HMM5_16_entraine)
+# save(HMM5_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_16_entraine.rdata')
+# 
+# print("baumWelchList 16 6")
+# HMM6_16_entraine = baumWelchList(HMM6_16, obs6_16, 1000)$hmm
+# print(HMM6_16_entraine)
+# save(HMM6_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_16_entraine.rdata')
+# 
+# print("baumWelchList 16 7")
+# HMM7_16_entraine = baumWelchList(HMM7_16, obs7_16, 1000)$hmm
+# print(HMM7_16_entraine)
+# save(HMM7_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_16_entraine.rdata')
+# 
+# print("baumWelchList 16 8")
+# HMM8_16_entraine = baumWelchList(HMM8_16, obs8_16, 1000)$hmm
+# print(HMM8_16_entraine)
+# save(HMM8_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_16_entraine.rdata')
+# 
+# print("baumWelchList 16 9")
+# HMM9_16_entraine = baumWelchList(HMM9_16, obs9_16, 1000)$hmm
+# print(HMM9_16_entraine)
+# save(HMM9_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_16_entraine.rdata')
 
-### Pour 5x4
-print("baumWelchList 5X4 0")
-HMM0_5x4_entraine = baumWelchList(HMM0_5x4, obs0_5X4, 1000)$hmm
-print(HMM0_5x4_entraine)
-save(HMM0_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x4_entraine.rdata')
 
-print("baumWelchList 5X4 1")
-HMM1_5x4_entraine = baumWelchList(HMM1_5x4, obs1_5X4, 1000)$hmm
-print(HMM1_5x4_entraine)
-save(HMM1_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 2")
-HMM2_5x4_entraine = baumWelchList(HMM2_5x4, obs2_5X4, 1000)$hmm
-print(HMM2_5x4_entraine)
-save(HMM2_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 3")
-HMM3_5x4_entraine = baumWelchList(HMM3_5x4, obs3_5X4, 1000)$hmm
-print(HMM3_5x4_entraine)
-save(HMM3_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 4")
-HMM4_5x4_entraine = baumWelchList(HMM4_5x4, obs4_5X4, 1000)$hmm
-print(HMM4_5x4_entraine)
-save(HMM4_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 5")
-HMM5_5x4_entraine = baumWelchList(HMM5_5x4, obs5_5X4, 1000)$hmm
-print(HMM5_5x4_entraine)
-save(HMM5_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 6")
-HMM6_5x4_entraine = baumWelchList(HMM6_5x4, obs6_5X4, 1000)$hmm
-print(HMM6_5x4_entraine)
-save(HMM6_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 7")
-HMM7_5x4_entraine = baumWelchList(HMM7_5x4, obs7_5X4, 1000)$hmm
-print(HMM7_5x4_entraine)
-save(HMM7_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 8")
-HMM8_5x4_entraine = baumWelchList(HMM8_5x4, obs8_5X4, 1000)$hmm
-print(HMM8_5x4_entraine)
-save(HMM8_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x4_entraine.rdata')
-
-print("baumWelchList 5X4 9")
-HMM9_5x4_entraine = baumWelchList(HMM9_5x4, obs9_5X4, 1000)$hmm
-print(HMM9_5x4_entraine)
-save(HMM9_5x4_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x4_entraine.rdata')
-
-### Pour 8
-
-print("baumWelchList 8 0")
-HMM0_8_entraine = baumWelchList(HMM0_8, obs0_8, 1000)$hmm
-print(HMM0_8_entraine)
-save(HMM0_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_8_entraine.rdata')
-
-print("baumWelchList 8 1")
-HMM1_8_entraine = baumWelchList(HMM1_8, obs1_8, 1000)$hmm
-print(HMM1_8_entraine)
-save(HMM1_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_8_entraine.rdata')
-
-print("baumWelchList 8 2")
-HMM2_8_entraine = baumWelchList(HMM2_8, obs2_8, 1000)$hmm
-print(HMM2_8_entraine)
-save(HMM2_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_8_entraine.rdata')
-
-print("baumWelchList 8 3")
-HMM3_8_entraine = baumWelchList(HMM3_8, obs3_8, 1000)$hmm
-print(HMM3_8_entraine)
-save(HMM3_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_8_entraine.rdata')
-
-print("baumWelchList 8 4")
-HMM4_8_entraine = baumWelchList(HMM4_8, obs4_8, 1000)$hmm
-print(HMM4_8_entraine)
-save(HMM4_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_8_entraine.rdata')
-
-print("baumWelchList 8 5")
-HMM5_8_entraine = baumWelchList(HMM5_8, obs5_8, 1000)$hmm
-print(HMM5_8_entraine)
-save(HMM5_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_8_entraine.rdata')
-
-print("baumWelchList 8 6")
-HMM6_8_entraine = baumWelchList(HMM6_8, obs6_8, 1000)$hmm
-print(HMM6_8_entraine)
-save(HMM6_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_8_entraine.rdata')
-
-print("baumWelchList 8 7")
-HMM7_8_entraine = baumWelchList(HMM7_8, obs7_8, 1000)$hmm
-print(HMM7_8_entraine)
-save(HMM7_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_8_entraine.rdata')
-
-print("baumWelchList 8 8")
-HMM8_8_entraine = baumWelchList(HMM8_8, obs8_8, 1000)$hmm
-print(HMM8_8_entraine)
-save(HMM8_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_8_entraine.rdata')
-
-print("baumWelchList 8 9")
-HMM9_8_entraine = baumWelchList(HMM9_8, obs9_8, 1000)$hmm
-print(HMM9_8_entraine)
-save(HMM9_8_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_8_entraine.rdata')
-
-### Pour 16
-
-print("baumWelchList 16 0")
-HMM0_16_entraine = baumWelchList(HMM0_16, obs0_16, 1000)$hmm
-print(HMM0_16_entraine)
-save(HMM0_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_16_entraine.rdata')
-
-print("baumWelchList 16 1")
-HMM1_16_entraine = baumWelchList(HMM1_16, obs1_16, 1000)$hmm
-print(HMM1_16_entraine)
-save(HMM1_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_16_entraine.rdata')
-
-print("baumWelchList 16 2")
-HMM2_16_entraine = baumWelchList(HMM2_16, obs2_16, 1000)$hmm
-print(HMM2_16_entraine)
-save(HMM2_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_16_entraine.rdata')
-
-print("baumWelchList 16 3")
-HMM3_16_entraine = baumWelchList(HMM3_16, obs3_16, 1000)$hmm
-print(HMM3_16_entraine)
-save(HMM3_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_16_entraine.rdata')
-
-print("baumWelchList 16 4")
-HMM4_16_entraine = baumWelchList(HMM4_16, obs4_16, 1000)$hmm
-print(HMM4_16_entraine)
-save(HMM4_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_16_entraine.rdata')
-
-print("baumWelchList 16 5")
-HMM5_16_entraine = baumWelchList(HMM5_16, obs5_16, 1000)$hmm
-print(HMM5_16_entraine)
-save(HMM5_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_16_entraine.rdata')
-
-print("baumWelchList 16 6")
-HMM6_16_entraine = baumWelchList(HMM6_16, obs6_16, 1000)$hmm
-print(HMM6_16_entraine)
-save(HMM6_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_16_entraine.rdata')
-
-print("baumWelchList 16 7")
-HMM7_16_entraine = baumWelchList(HMM7_16, obs7_16, 1000)$hmm
-print(HMM7_16_entraine)
-save(HMM7_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_16_entraine.rdata')
-
-print("baumWelchList 16 8")
-HMM8_16_entraine = baumWelchList(HMM8_16, obs8_16, 1000)$hmm
-print(HMM8_16_entraine)
-save(HMM8_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_16_entraine.rdata')
-
-print("baumWelchList 16 9")
-HMM9_16_entraine = baumWelchList(HMM9_16, obs9_16, 1000)$hmm
-print(HMM9_16_entraine)
-save(HMM9_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_16_entraine.rdata')
-
-
-
-# load('Results/HMM0_5x3_entraine.rdata')
-
-# print("Chargement des hmm entrain�s")
+ print("Chargement des hmm entrain�s")
 # 
 # leHMM_5X3 = c()
-# tmp0 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x3_entraine.rdata')
-# tmp1 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x3_entraine.rdata')
-# tmp2 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x3_entraine.rdata')
-# tmp3 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x3_entraine.rdata')
-# tmp4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x3_entraine.rdata')
-# tmp5 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x3_entraine.rdata')
-# tmp6 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x3_entraine.rdata')
-# tmp7 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x3_entraine.rdata')
-# tmp8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x3_entraine.rdata')
-# tmp9 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x3_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x3_entraine.rdata')
 # 
 # leHMM_5X3 = list(tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8, tmp9)
-# matrice_HMM_5X3 = matrix(leHMM_5X3, nrow = 10, ncol = 1, byrow = T)
+matrice_HMM_5X3 = rbind(HMM0_5x3_entraine,HMM1_5x3_entraine,HMM2_5x3_entraine,HMM3_5x3_entraine,HMM4_5x3_entraine,HMM5_5x3_entraine,HMM6_5x3_entraine,HMM7_5x3_entraine,HMM8_5x3_entraine,HMM9_5x3_entraine)
 # 
 # save(leHMM_5X3, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM_5x3_entraine.rdata')
 # 
 # leHMM_5X4 = c()
-# tmp0_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x4_entraine.rdata')
-# tmp1_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x4_entraine.rdata')
-# tmp2_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x4_entraine.rdata')
-# tmp3_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x4_entraine.rdata')
-# tmp4_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x4_entraine.rdata')
-# tmp5_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x4_entraine.rdata')
-# tmp6_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x4_entraine.rdata')
-# tmp7_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x4_entraine.rdata')
-# tmp8_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x4_entraine.rdata')
-# tmp9_5X4 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_5x4_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_5x4_entraine.rdata')
 # 
 # leHMM_5X4 = list(m0=tmp0_5X4, m1=tmp1_5X4, m2=tmp2_5X4, m3=tmp3_5X4, m4=tmp4_5X4, m5=tmp5_5X4, m6=tmp6_5X4, m7=tmp7_5X4, m8=tmp8_5X4, m9=tmp9_5X4)
 # 
@@ -402,32 +399,32 @@ save(HMM9_16_entraine, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_R
 # 
 # 
 # leHMM_8 = c()
-# tmp0_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_8_entraine.rdata')
-# tmp1_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_8_entraine.rdata')
-# tmp2_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_8_entraine.rdata')
-# tmp3_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_8_entraine.rdata')
-# tmp4_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_8_entraine.rdata')
-# tmp5_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_8_entraine.rdata')
-# tmp6_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_8_entraine.rdata')
-# tmp7_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_8_entraine.rdata')
-# tmp8_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_8_entraine.rdata')
-# tmp9_8 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_8_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_8_entraine.rdata')
 # 
 # leHMM_8 = list(m0=tmp0_8, m1=tmp1_8, m2=tmp2_8, m3=tmp3_8, m4=tmp4_8, m5=tmp5_8, m6=tmp6_8, m7=tmp7_8, m8=tmp8_8, m9=tmp9_8)
 # 
 # save(leHMM_8, file = 'C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM_8_entraine.rdata')
 # 
 # leHMM_16 = c()
-# tmp0_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_16_entraine.rdata')
-# tmp1_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_16_entraine.rdata')
-# tmp2_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_16_entraine.rdata')
-# tmp3_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_16_entraine.rdata')
-# tmp4_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_16_entraine.rdata')
-# tmp5_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_16_entraine.rdata')
-# tmp6_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_16_entraine.rdata')
-# tmp7_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_16_entraine.rdata')
-# tmp8_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_16_entraine.rdata')
-# tmp9_16 <- load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM0_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM1_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM2_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM3_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM4_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM5_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM6_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM7_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM8_16_entraine.rdata')
+load('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/Results/HMM9_16_entraine.rdata')
 # 
 # leHMM_16 = list(m0=tmp0_16, m1=tmp1_16, m2=tmp2_16, m3=tmp3_16, m4=tmp4_16, m5=tmp5_16, m6=tmp6_16, m7=tmp7_16, m8=tmp8_16, m9=tmp9_16)
 # 
@@ -509,7 +506,7 @@ classifyDigit <- function(merge, test_resources){
 # Chargement des fichiers test
 
 ### Pour 5x3
-# test0 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit0.txt')
+test0 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit0.txt')
 # test1 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit1.txt')
 # test2 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit2.txt')
 # test3 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Data5X3/Test_compute_symbol_5_3Digit3.txt')
@@ -557,10 +554,11 @@ classifyDigit <- function(merge, test_resources){
 # test8 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit8.txt')
 # test9 = Load_Obs('C:/Users/Coraline/Documents/Cora-Cours/SL_Digit_Recognition/src/dataset/Dir16/Test_compute_symbol_dir_16Digit9.txt')
 
-# reco_rate0 <- classifyDigit(leHMM_5X3,test0)
+reco_rate0 <- classifyDigit(matrice_HMM_5X3,test0)
+print (reco_rate0)
 # reco_rate1 <- classifyDigit(test1,#liste des hmm entrainé)
 # reco_rate2 <- classifyDigit(test2,#liste des hmm entrainé)
-# reco_rate3 <- classifyDigit(test3,#liste des hmm entrainé
+# reco_rate3 <- classifyDigit(test3,#liste des hmm entrainé)
 # reco_rate4 <- classifyDigit(test4,#liste des hmm entrainé)
 # reco_rate5 <- classifyDigit(test5,#liste des hmm entrainé)
 # reco_rate6 <- classifyDigit(test6,#liste des hmm entrainé)
