@@ -12,8 +12,7 @@ test.reco <- function(true, pred) {
   return (as.numeric(sum(true == cres)))
 }
 # convert a vector of classes in a matrix of 0 and 1 (objectif value matrix)
-class.ind <- function (cl) 
-{
+class.ind <- function (cl) {
   n <- length(cl)
   cl <- as.factor(cl)
   x <- matrix(0, n, length(levels(cl)))
@@ -23,8 +22,7 @@ class.ind <- function (cl)
 }
 
 #generate the matrix of observation from a text file => usefull for training
-Load_Obs <- function(file)
-{
+Load_Obs <- function(file){
   obs <- read.table(file)
   cat(dim(obs)[1], " examples loaded of size ",dim(obs)[2],"\n")
   return(matrix(t(obs),ncol=dim(obs)[2],byrow=T))

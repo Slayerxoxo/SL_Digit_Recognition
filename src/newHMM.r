@@ -1,6 +1,4 @@
-initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL,
-                   emissionProbs=NULL)
-{
+initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL, emissionProbs=NULL){
   nStates    = length(States)
   nSymbols   = length(Symbols)
   S          = rep(1/nStates,nStates)
@@ -16,9 +14,7 @@ initHMM = function(States, Symbols, startProbs=NULL, transProbs=NULL,
               emissionProbs=E))
 }
 
-
-forward = function(hmm, observation)
-{
+forward = function(hmm, observation){
   hmm$transProbs[is.na(hmm$transProbs)]       = 0
   hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
   nObservations  = length(observation)
@@ -54,8 +50,7 @@ forward = function(hmm, observation)
   return(f)
 }
 
-backward = function(hmm, observation)
-{
+backward = function(hmm, observation){
   hmm$transProbs[is.na(hmm$transProbs)]       = 0
   hmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
   nObservations  = length(observation)
@@ -88,8 +83,7 @@ backward = function(hmm, observation)
   return(b)
 }
 
-baumWelch = function(hmm, observation, maxIterations=100, delta=1E-9, pseudoCount=0)
-{
+baumWelch = function(hmm, observation, maxIterations=100, delta=1E-9, pseudoCount=0){
   tempHmm = hmm
   tempHmm$transProbs[is.na(hmm$transProbs)]       = 0
   tempHmm$emissionProbs[is.na(hmm$emissionProbs)] = 0
@@ -124,8 +118,7 @@ baumWelch = function(hmm, observation, maxIterations=100, delta=1E-9, pseudoCoun
   return(list(hmm=tempHmm,difference=diff))
 }
 
-baumWelchList = function(hmm, LObservation, maxIterations=100, delta=1E-9, pseudoCount=0)
-{
+baumWelchList = function(hmm, LObservation, maxIterations=100, delta=1E-9, pseudoCount=0){
   tempHmm = hmm
   diff = c()
   
@@ -173,8 +166,7 @@ baumWelchList = function(hmm, LObservation, maxIterations=100, delta=1E-9, pseud
   return(list(hmm=tempHmm,difference=diff))
 }
 
-baumWelchRecursion = function(hmm, observation)
-{
+baumWelchRecursion = function(hmm, observation){
   TransitionMatrix    = hmm$transProbs
   TransitionMatrix[,] = 0
   EmissionMatrix      = hmm$emissionProbs
@@ -236,9 +228,8 @@ baumWelchRecursion = function(hmm, observation)
   }
   return(list(TransitionMatrix=TransitionMatrix,EmissionMatrix=EmissionMatrix))
 }
-#   compute loglikelihood
-loglikelihood <- function(hmm, obs)
-{
+
+loglikelihood <- function(hmm, obs){
   
   f <- forward(hmm,obs)
   #cat("f:", dim(f), " obs:", length(obs))
@@ -255,15 +246,14 @@ loglikelihood <- function(hmm, obs)
   }
   return(loglike)
 }
-logadd <- function(a,b)
-{
+
+logadd <- function(a,b){
   if (a <= b)
     return(b+log1p(exp(a-b)))
   else return(a+log1p(exp(b-a)))
 }
 
-logaddMat <- function(a,b)
-{
+logaddMat <- function(a,b){
   res = a
   d <- dim(a)
   for(i in 1:d[1]){

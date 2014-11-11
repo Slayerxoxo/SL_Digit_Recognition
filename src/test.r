@@ -53,4 +53,3 @@ res1 <- compute_symbol_dir(tmp1$d1)
 res2 <- compute_symbol_dir(tmp1$d2)
 res3 <- compute_symbol_dir(tmp1$d3)
 cat("pour 1 :", res1, "\n","pour 4 :", res2, "\n","pour 6 :", res3, "\n")
-
