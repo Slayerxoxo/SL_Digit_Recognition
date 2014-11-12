@@ -29,3 +29,23 @@
 \setlength{\headheight}{23pt}	% Correction du warning \headheight is too small
 \lhead{\leftmark}
 \rhead{Digit Recognizer}
+
+%%%%% Affichage des numéros de ligne pour la commande lstlisting %%%%%
+\lstset{ %
+	language=R,
+	basicstyle=\footnotesize,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	backgroundcolor=\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	frame=single,
+	tabsize=2,
+	captionpos=b,
+	breaklines=true,
+	breakatwhitespace=false,
+	escapeinside={\%*}{*)}
+}
