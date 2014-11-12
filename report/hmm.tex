@@ -79,8 +79,86 @@ L'un des principaux avantages de cette méthode est que la taille de la séquenc
 
 \subsection{Création et initialisation d'un HMM}
 
+Pour cette nouvelle partie, nous considérerons un HMM à 3 états ($S_x$), observant 10 chiffres ($c_x$) et une topologie gauche-droite :
+\begin{center}
+	\begin{tikzpicture}
+	 	% states
+		\node[state] (s1) at (1,2) {$S_1$}
+			edge [loop above] node[auto] {0.9} ();
+		\node[state] (s2) at (4.5,2) {$S_2$}
+			edge [<-,bend left=0] node[auto] {0.1} (s1)
+			edge [loop above] node[auto] {0.9} ();
+		\node[state] (s3) at (8,2) {$S_3$}
+			edge [<-,bend left=0] node[auto] {0.1}  (s2)
+			edge [loop above] node[auto] {1} ();
+		% observations
+		\node[observation] (c0) at (0,0) {$c_0$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c1) at (1,0) {$c_1$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c2) at (2,0) {$c_2$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c3) at (3,0) {$c_3$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c4) at (4,0) {$c_4$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c5) at (5,0) {$c_5$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c6) at (6,0) {$c_6$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c7) at (7,0) {$c_7$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c8) at (8,0) {$c_8$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+		\node[observation] (c9) at (9,0) {$c_9$}
+			edge [lightedge] (s1)
+			edge [lightedge] (s2)
+			edge [lightedge] (s3);
+	\end{tikzpicture}
+\end{center}
+
+Pour ce HMM obervant une topologie gauche-droite, il est nécessaire que l'état $S_1$ soit l'état initial. Pour cela, les probabilités initiales attribuées aux états sont de 1 pour $S_1$, et 0 pour $S_2$ et $S_3$.\\
+
+En ce qui concerne la matrice de transition, nous savons que la séquence T=30, et qu'il y a 3 états. Cela signifie qu'il n'y a qu'une chance sur dix de passer à l'état suivant et neuf chances sur dix de rester dans cet état. La matrice de transition est donc :
+\begin{center}
+	$\begin{pmatrix}
+		0.9 & 0.1 & 0 \\
+		0 & 0.9 & 0.1 \\
+		0 & 0 & 1 
+	\end{pmatrix}$
+\end{center}
+
+Sans plus d'informations sur les chiffres, la matrice d'observation sera initialisée avec une distribution uniforme.
+
 
 \subsection{Entraînement des modèles}
 
+Pour cette troisième partie, seul quelques extraits de codes seront présentés. L'intégralité du code source se trouve dans le fichier \texttt{src/hmmDigitR.r} du projet. 
+
+\subsubsection*{Création de la fonction \texttt{initHMMDigit}}
+La fonction \texttt{initHMMDigit} prend en entrée le nombre d'état et le nombre d'observation pour le HMM. Elle initialise ensuite les probabilités initiales (1, 0, 0, \dots), ainsi que les matrices de transitions et d'emissions.\\
+
+Une fois initialisés, les HMMs sont ensuite entraînés. Pour cela nous avons utilisé différents paramêtres :
+\begin{itemize}
+	\item
+\end{itemize}
 
 \subsection{Performances de la reconnaissance}
