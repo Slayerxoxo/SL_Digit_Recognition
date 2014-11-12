@@ -154,11 +154,42 @@ Sans plus d'informations sur les chiffres, la matrice d'observation sera initial
 Pour cette troisième partie, seul quelques extraits de codes seront présentés. L'intégralité du code source se trouve dans le fichier \texttt{src/hmmDigitR.r} du projet. 
 
 \subsubsection*{Création de la fonction \texttt{initHMMDigit}}
-La fonction \texttt{initHMMDigit} prend en entrée le nombre d'état et le nombre d'observation pour le HMM. Elle initialise ensuite les probabilités initiales (1, 0, 0, \dots), ainsi que les matrices de transitions et d'emissions.\\
+La fonction \texttt{initHMMDigit} prend en entrée le nombre d'états et le nombre d'observations pour le HMM. Elle initialise ensuite les probabilités initiales (1, 0, 0, \dots), ainsi que les matrices de transitions et d'emissions.\\
+
+\newpage
+
+\begin{lstlisting}
+	initHMMDigit <- function(nbrEtats, nbrObsv){
+	  (...)
+		
+	  # Mise en place des proba de transition pour le HMM optimal
+	  (...)
+	  matriceInit <- matrix(transProbs, nrow = nbrEtats, ncol = nbrEtats, byrow = T)
+	  
+	  # Mise en place des proba d'emission
+	  for (i in 1:nbrEtats*nbrObsv){
+		emissionProbs <- c(emissionProbs, 1/nbrObsv)
+	  }
+	  matriceEmission <- matrix(emissionProbs,nrow = nbrEtats, ncol = nbrObsv, byrow = T)
+	  
+	  # Appel de initHMM
+	  resultat <- initHMM(etats, obsv, probInit, matriceInit, matriceEmission)
+	  return (resultat)
+	}
+\end{lstlisting}
 
 Une fois initialisés, les HMMs sont ensuite entraînés. Pour cela nous avons utilisé différents paramêtres :
 \begin{itemize}
-	\item
+	\item Train\_compute\_symbol (5x3, 5x4, dir\_8 et dir\_16)
+	\item Le nombre d'états (3, 4 et 7)
 \end{itemize}
 
+\vspace{0.5cm}
+
+Pour plus de simplicité, les models entrainés ont été sauvegardés dans le dossier \texttt{Results}. Ainsi, il est plus facile de les recharger. Les Hmms pour 7 états n'ont pas pu être entrainés pour tous les Train\_compute\_symbol, car cela était trop coûteux pour la machine.
+
+
 \subsection{Performances de la reconnaissance}
+
+
+
