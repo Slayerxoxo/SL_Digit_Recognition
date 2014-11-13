@@ -57,7 +57,8 @@ initHMMDigit <- function(nbrEtats, nbrObsv){
   return (resultat)
 }
 
-# classifyDigit <- function(hmmMatrice, testLst){
+# classification première version
+# classify <- function(hmmMatrice, testLst){
 #   res <- numeric()
 #   nbRows <- length(hmmMatrice)/5
 #   
@@ -74,7 +75,9 @@ initHMMDigit <- function(nbrEtats, nbrObsv){
 #   return (matrix(res,nbResources,nbRows))
 # }
 
-# classifyDigit <- function(hmm, obs) 
+
+# classification seconde version
+# classify <- function(hmm, obs) 
 # {
 #     res <- numeric()
 #     nbRows <- length(hmm)/5
@@ -83,24 +86,7 @@ initHMMDigit <- function(nbrEtats, nbrObsv){
 #     probs <- sapply(hmm, function(x) loglikelihood(x$hmm, obs))
 # }
 
-recognition <- function(type, model)
-{
-  classes = NULL
-  
-  o <- loadAll(paste("/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/data/Test_compute_symbol_", type, "Digit", sep=""))
-  
-  for(i in 1:length(o$obs[,1])){
-    classes <- c(classes, classifyJEdit(model, o$obs[i,]))
-  }
-  
-  print("Confusion Matrix :")
-  print(table(o$cl, classes))
-  
-  print("Recognition Rate :")
-  print((sum(diag(table(o$cl,classes)))/length(o$obs[,1])) * 100)
-}
-
-classifyJEdit <- function(hmm, obs)
+classify <- function(hmm, obs)
 {
   max <- -Inf
   class <- 0
@@ -118,6 +104,23 @@ classifyJEdit <- function(hmm, obs)
     k <- k + 1
   }
   return(class)
+}
+
+recognition <- function(type, model)
+{
+  classes = NULL
+  
+  o <- loadAll(paste("/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/data/Test_compute_symbol_", type, "Digit", sep=""))
+  
+  for(i in 1:length(o$obs[,1])){
+    classes <- c(classes, classify(model, o$obs[i,]))
+  }
+  
+  print("Confusion Matrix :")
+  print(table(o$cl, classes))
+  
+  print("Recognition Rate :")
+  print((sum(diag(table(o$cl,classes)))/length(o$obs[,1])) * 100)
 }
 
 #########################################################
@@ -449,11 +452,12 @@ classifyJEdit <- function(hmm, obs)
 # print("Chargement des Hmms deja entraines")
 # # Attention, il est peut être nécessaire de changer la localisation des fichiers
 # 
-
+# 
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/5_3')
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/5_4')
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/dir_8')
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/dir_16')
+
 # ### Pour 5x3
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/HMM0_5x3_entraine.rdata')
 # load('/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/HMM1_5x3_entraine.rdata')
@@ -515,7 +519,7 @@ classifyJEdit <- function(hmm, obs)
 # matrice_HMM_16 = rbind(HMM0_16_entraine,HMM1_16_entraine,HMM2_16_entraine,HMM3_16_entraine,HMM4_16_entraine,HMM5_16_entraine,HMM6_16_entraine,HMM7_16_entraine,HMM8_16_entraine,HMM9_16_entraine)
 # save(matrice_HMM_dir_16, file = '/home/coraline/Documents/Signal et Langue/SL_Digit_Recognition/src/Results/3_states/matrice_HMM_dir_16.rdata')
 
-# Classification des résultats
+# # Classification des résultats
 # ### Pour 5x3
 # recognition("5_3", models_optimal_5_3)
 # ### Pour 5x4
