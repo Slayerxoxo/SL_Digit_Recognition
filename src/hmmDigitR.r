@@ -57,22 +57,22 @@ initHMMDigit <- function(nbrEtats, nbrObsv){
   return (resultat)
 }
 
-# classifyDigit <- function(hmmMatrice, testLst){
-#   res <- numeric()
-#   nbRows <- length(hmmMatrice)/5
-#   
-#   nbResources <- length(testLst)/30
-#   
-#   for(res_line in 1:nbResources) {
-#     current_line <- numeric()
-#     for(line in 1:nbRows) {
-#       test <- loglikelihood(hmmMatrice[line,],testLst[res_line,])
-#       current_line <- c(current_line,test)
-#     }
-#     res <- c(res, current_line)
-#   }
-#   return (matrix(res,nbResources,nbRows))
-# }
+classifyDigit <- function(hmmMatrice, testLst){
+  res <- numeric()
+  nbRows <- length(hmmMatrice)/5
+  
+  nbResources <- length(testLst)/30
+  
+  for(res_line in 1:nbResources) {
+    current_line <- numeric()
+    for(line in 1:nbRows) {
+      test <- loglikelihood(hmmMatrice[line,],testLst[res_line,])
+      current_line <- c(current_line,test)
+    }
+    res <- c(res, current_line)
+  }
+  return (matrix(res,nbResources,nbRows))
+}
 
 # classifyDigit <- function(hmm, obs) 
 # {
@@ -83,7 +83,7 @@ initHMMDigit <- function(nbrEtats, nbrObsv){
 #     probs <- sapply(hmm, function(x) loglikelihood(x$hmm, obs))
 # }
 
-recognition <- function(type, model)
+recognition <- function(o, model)
 {
   classes = NULL
   

@@ -260,8 +260,8 @@ neural_fusion_data<-function(nn, hmm, data, dataFt, dataTarg){
 }
 
 
-# data<-loadAll("C:/Users/Romain/Code/Signal et langue/data_Digits_HMM/Data5x4/Train_compute_symbol_5_4Digit")
-# # m<-create_image_from_data(data$obs,5,3)
+# data<-loadAll(file.path(getwd(),"data/Test_compute_symbol_5_4Digit"))
+# # # m<-create_image_from_data(data$obs,5,3)
 # dataFt<-construct_all_Ft(data$obs, 5, 4)
 
 
@@ -281,7 +281,7 @@ neural_fusion_data<-function(nn, hmm, data, dataFt, dataTarg){
 # select <- ((digitCl == 1) | (digitCl == 2)| (digitCl == 3)| (digitCl == 4)| (digitCl == 5)| (digitCl == 6)| (digitCl == 7)| (digitCl == 8)| (digitCl == 9)| (digitCl == 0))
 # 
 # dataTarg <- class.ind(digitCl[select])
-# 
+
 # 
 # load(file.path(getwd(),'Results/3_states/matrice_HMM_8.rdata'))
 # load(file.path(getwd(),"Results/neural_network/nnet8.rda"))
@@ -312,7 +312,12 @@ neural_fusion_data<-function(nn, hmm, data, dataFt, dataTarg){
 # save(nn_fusion_8, file=file.path(getwd(),"Results/neural_network/nn_fusion_8.rda"))
 
 
-# load("C:/Users/Romain/Code/Signal et langue/data_Digits_HMM/nnet7x5.rda")
-
-# res<-test.reco(dataTarg, predict(new_nn, dataFt))
+# load(file.path(getwd(),"Results/neural_network/nnet5x4.rda"))
+# load(file.path(getwd(),"Results/3_states/matrice_HMM_5X4.rdata"))
+# # 
+# res<-test.reco(dataTarg, predict(nnet_5_4, dataFt))
 # print(res/dim(dataTarg)[1])
+# 
+# reco <- test.reco(dataTarg_5_4, exp(classifyDigit(matrice_HMM_5X4,data_5_4$obs)))
+# print("HMM_5_4")
+# print(reco/dim(dataTarg_5_4)[1])
