@@ -191,5 +191,11 @@ Pour plus de simplicité, les models entrainés ont été sauvegardés dans le d
 
 \subsection{Performances de la reconnaissance}
 
+Après la phase d'entrainement des HMMs, et avant de tester le système, il faut au préalable définir des models en réunissant les HMMs entrainés de même catégories. Chaque model est composé de 10 HMMs, un pour chaque chiffre ayant été entrainé par le même type de données (5x3, 5x4, \dots).\\
 
+Pour plus de facilité, et pour améliorer le temps de chargement, l'intégralité de ces modèles a été au pralable sauvegardé dans le dossier \texttt{Results}. Ainsi il est plus facile de les chargers et de lancer les tests.\\
+
+La phase de test permet de mesurer grace aux fonctions : 
+
+le taux de reconnaissance de chaque HMM. De plus, toujurs dans l'optique d'améliorer la lecture des résultats
 
