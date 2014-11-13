@@ -11,6 +11,7 @@ test.reco <- function(true, pred) {
   cres <- max.col(pred)
   return (as.numeric(sum(true == cres)))
 }
+
 # convert a vector of classes in a matrix of 0 and 1 (objectif value matrix)
 class.ind <- function (cl) {
   n <- length(cl)
@@ -39,4 +40,15 @@ loadAll <- function(rootName){
     cl <- c(cl, rep(i,dim(obs)[1]))
   }
   return (list(obs=allobs, cl=cl))
+}
+
+logadd <- function(min, max)
+{
+  if (min == -Inf & max == -Inf) {
+    return(min)
+  } else if (min <= max) {
+    return(max + log1p(exp(min - max)))
+  } else {
+    return(min + log1p(exp(max - min)))
+  }
 }
