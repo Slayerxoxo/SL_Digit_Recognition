@@ -4,16 +4,31 @@
 %%%%%                Author : Coraline Marie                   %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\MakePerPage{footnote} %the perpage package command
 %%%%% Ligne de séparation %%%%%
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 
 %%%%% Recoloration des liens %%%%%
-\hypersetup{colorlinks = true,
-            breaklinks = true,
-            linkcolor = {blue},
-            urlcolor = {blue},}
+\hypersetup{
+  backref=true,
+  %permet d'ajouter des liens dans...
+  pagebackref=true,%...les bibliographies
+  hyperindex=true, %ajoute des liens dans les index.
+  colorlinks=true, %colorise les liens
+  breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+  urlcolor=blue, %couleur des hyperliens
+  linkcolor=BrickRed, %Couleurs des liens internes
+  citecolor=Cyan,
+  bookmarks=true, %créé des signets pour Acrobat
+  bookmarksopen=true,
+  %si les signets Acrobat sont créés,
+  %les afficher complètement.
+  pdftitle={Signal et langue -- Digit Recognizer}, %informations apparaissant dans
+  pdfauthor={Romain RINCE},
+  %dans les informations du document
+  %sous Acrobat.
+}
 
 
 %%%%% Création de nouvelles couleurs %%%%%
